@@ -1,0 +1,2 @@
+get_uni_transmodel_var('inter_regress_intra_std.mat', '/GPFS/cuizaixu_lab_permanent/wuguowei/python_code/project/HCPA_single_parcel/')
+get_uni_transmodel_var('inter_regress_intra_std.mat', '/GPFS/cuizaixu_lab_permanent/wuguowei/python_code/project/HCPD_single_parcel/')

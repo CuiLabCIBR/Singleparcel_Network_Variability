@@ -1,0 +1,77 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+library(bruceR)
+library(plotly)
+HCPA_gene <- import("/GPFS/cuizaixu_lab_permanent/wuguowei/python_code/repeat_code/Gene_data/HCPA_gene_FC.csv")
+#library(hexbin)
+#HCPA_gene$variability_set <- (HCPA_gene$variability_set - min(HCPA_gene$variability_set)) /(max(HCPA_gene$variability_set) - min(HCPA_gene$variability_set))
+#hexinfo <- hexbin(HCPA_gene$variability_set, HCPA_gene$gene_corr_set, xbins = 40);
+#data_hex <- data.frame(hcell2xy(hexinfo), count = hexinfo@count);
+myPalette <- c("#333333", "#4C4C4C", "#666666", "#7F7F7F", "#999999", "#B2B2B2", "#CCCCCC");
+#ggplot() +
+#         geom_hex(data = subset(data_hex, count >= 10), aes(x, y, fill = count), stat = "identity") +
+#         scale_fill_gradientn(colours = myPalette, breaks = c(10, 30)) +
+#         geom_smooth(data = HCPA_gene, aes(x = variability_set , y = gene_corr_set), method = lm, color = "#FFFFFF", linetype = "dashed") +
+#         theme_classic()
+
+nperm <- 1000
+r.real <- cor(HCPA_gene$gene_corr_set,HCPA_gene$variability_set,method = "spearman")
+r.per <- replicate (nperm, expr = cor (x = HCPA_gene$gene_corr_set, y = sample (HCPA_gene$variability_set)))
+r.per <- data.frame(permutation_R = r.per,ture_R = rep(r.real,1000))
+
+ggplot(data=HCPA_gene)+geom_point(aes(variability_set,gene_corr_set,color="#FFE4E1",alpha=0.2))+
+   geom_smooth(data = HCPA_gene, aes(x = variability_set, y = gene_corr_set), method = lm, color = "#FFFFFF", linetype = "dashed") +
+         theme_classic()+labs(x = "FC Variability in HCPA Dataset", y = "Genes associate") +
+        theme(axis.text=element_text(size=20, color='black'), axis.title=element_text(size=20), aspect.ratio = 1)+
+  theme(legend.position="none")
+
+ggplot(data=r.per)+geom_histogram(aes(permutation_R),bins = 30,color = "#999999", fill = "#999999") +
+  geom_vline(xintercept = r.per$ture_R, size = 1, color = 'red', linetype = "dashed") +
+    theme_classic() + labs(x = "", y = "") +
+    theme(axis.text=element_text(size=20, color='black'), aspect.ratio = 1)+
+  theme(axis.line.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank())+
+  scale_y_continuous(expand = c(0, 0))
+
+```
+
+
+
+```{r}
+library(bruceR)
+library(plotly)
+HCPD_gene <- import("/GPFS/cuizaixu_lab_permanent/wuguowei/python_code/repeat_code/Gene_data/HCPD_gene_FC.csv")
+
+#HCPD_gene$variability_set <- (HCPD_gene$variability_set - min(HCPD_gene$variability_set)) /(max(HCPD_gene$variability_set) - min(HCPD_gene$variability_set))
+
+#hexinfo <- hexbin(HCPD_gene$variability_set, HCPD_gene$gene_corr_set, xbins = 40);
+#data_hex <- data.frame(hcell2xy(hexinfo), count = hexinfo@count);
+#myPalette <- c("#333333", "#4C4C4C", "#666666", "#7F7F7F", "#999999", "#B2B2B2", "#CCCCCC");
+#ggplot() +
+#         geom_hex(data = subset(data_hex, count >= 10), aes(x, y, fill = count), stat = "identity") +
+#         scale_fill_gradientn(colours = myPalette, breaks = c(10, 30)) +
+#         geom_smooth(data = HCPD_gene, aes(x = variability_set , y = gene_corr_set), method = lm, color = "#FFFFFF", linetype = "dashed") +
+#         theme_classic()
+
+nperm <- 1000
+r.real <- cor(HCPD_gene$gene_corr_set,HCPD_gene$variability_set,method = "spearman")
+r.per <- replicate (nperm, expr = cor (x = HCPD_gene$gene_corr_set, y = sample (HCPD_gene$variability_set)))
+r.per <- data.frame(permutation_R = r.per,ture_R = rep(r.real,1000))
+
+ggplot(data=HCPD_gene)+geom_point(aes(variability_set,gene_corr_set,color="#FFE4E1",alpha=0.2))+
+   geom_smooth(data = HCPD_gene, aes(x = variability_set, y = gene_corr_set), method = lm, color = "#FFFFFF", linetype = "dashed") +
+         theme_classic()+labs(x = "FC Variability in HCPD Dataset", y = "Genes associate") +
+        theme(axis.text=element_text(size=20, color='black'), axis.title=element_text(size=20), aspect.ratio = 1)+
+  theme(legend.position="none")
+
+ggplot(data=r.per)+geom_histogram(aes(permutation_R),bins = 30,color = "#999999", fill = "#999999") +
+  geom_vline(xintercept = r.per$ture_R, size = 1, color = 'red', linetype = "dashed") +
+    theme_classic() + labs(x = "", y = "") +
+    theme(axis.text=element_text(size=20, color='black'), aspect.ratio = 1)+
+  theme(axis.line.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank())+
+  scale_y_continuous(expand = c(0, 0))
+
+```
+
