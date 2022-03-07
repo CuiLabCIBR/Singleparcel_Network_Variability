@@ -1,4 +1,5 @@
 function []=check_label(nii_name)
+% this function check the surface-volume transfor step, the input is a nii data that produced by wb_command --cifti-to-vol
 data_vol = spm_vol(nii_name);
 data_vols = spm_read_vols(data_vol);
 data_vols(data_vols>400)=0;
