@@ -45,7 +45,7 @@ You can run the [step1 Motion Control](https://github.com/zaixulab-CIBR/Singlepa
   ## step3.1 step0_calculate_group_label.m  
   ```We used the scheafer 400 group label as the group reference label.```  
   ## step3.2.1 step_1_inra_variability_12run.m
-  ```This script is used to calculate the mean intra-subject variability matrix for HCP adults data. We split each session (4) of HCPA resting into three segments to estimate the intra-subject variability for each subject by calculating the standard deviation between 12 segments.```
+  ```This script is used to calculate the mean intra-subject variability matrix for HCP adults data. We split each session (4 session for each subject) of HCPA resting into three segments to estimate the intra-subject variability for each subject by calculating the standard deviation between 12 segments.```
   ## step3.2.2 step_1_inra_variability_8run_all_sub.m
   ```This script is used to calculate the mean intra-subject variability matrix for HCP development data. The task activation model was regressed from three task identification fMRI data [**Fair et al.,(2007b)**](https://www.sciencedirect.com/science/article/pii/S1053811906011773) for “pseudo-resting state” timeseries calculation. The details that how to merge 5 task-regressed-out runs into 4 segments are described in [**here**](https://github.com/zaixulab-CIBR/Singleparcel_Network_Variability/blob/main/step_2_Single_parcelation/S2_kong_2022_HCPD/S4_3_corr_based_singlepar_runs.m).```
 
