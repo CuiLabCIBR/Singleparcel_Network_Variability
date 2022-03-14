@@ -57,5 +57,5 @@ This script is used to calculate the mean intra-subject variability matrix for H
    
  # step 4,  Correlate the Gene map with the inter-subject variability matrix.  
  ## step4.1 Step_1_create_scheafer_400to_yeo_gene.m
- We use the Gene map which calculated by [Krienen, F. M., Yeo, B. T. T., Ge, T., Buckner, R. L., & Sherwood, C. C. (2016)](https://www.pnas.org/doi/10.1073/pnas.1510903113)]. At first, we need align this map to our group parcellation atlas. 
+ We use the Gene map which calculated by [Krienen, F. M., Yeo, B. T. T., Ge, T., Buckner, R. L., & Sherwood, C. C. (2016)](https://www.pnas.org/doi/10.1073/pnas.1510903113)]. At first, we need to align this map to our group parcellation atlas. 
 
