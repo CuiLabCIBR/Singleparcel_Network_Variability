@@ -57,5 +57,10 @@ This script is used to calculate the mean intra-subject variability matrix for H
    
  # step 4,  Correlate the Gene map with the inter-subject variability matrix.  
  ## step4.1 Step_1_create_scheafer_400to_yeo_gene.m
- We use the Gene map which calculated by [**Krienen, F. M., Yeo, B. T. T., Ge, T., Buckner, R. L., & Sherwood, C. C. (2016)**](https://www.pnas.org/doi/10.1073/pnas.1510903113)]. At first, we need to align this map to our group parcellation atlas. 
-
+ We use the Gene map which calculated by [**Krienen, F. M., Yeo, B. T. T., Ge, T., Buckner, R. L., & Sherwood, C. C. (2016)**](https://www.pnas.org/doi/10.1073/pnas.1510903113). At first, we need to align this map to our group parcellation atlas. ```The yeo 17 label atlas was used for the PNAS paper, and the cheafer 400 group label was used in this study.```
+## step4.2 Step_2_corr_gene_and_FC_variability_HCPA.m
+``` Correlate the Gene map with the inter-subject variability matrix of HCPA data. ```  
+## step4.3 Step_3_corr_gene_and_FC_variability_HCPD.m
+``` Correlate the Gene map with the inter-subject variability matrix of HCPD data. ``` 
+## step4.4 corr_data.Rmd
+``` Plot figure2 ``` 
