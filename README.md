@@ -29,7 +29,7 @@ You can run the [step1 Motion Control](https://github.com/zaixulab-CIBR/Singlepa
   ## step2.7 S3_4_individual_pacelation.m  
   ``` Running individual parcellation for each subject by using gMS-HBM method.```
   ## step2.8 S3_5_topgraph_variability  
-  ``` Calculating the topgraph variability as same as [Zaixu Cui, et al(2020)](https://www.sciencedirect.com/science/article/pii/S0896627320300556)```
+  Calculating the topgraph variability as same as [Zaixu Cui, et al(2020)](https://www.sciencedirect.com/science/article/pii/S0896627320300556)
   ## step2.9 S4_1_generat_ind_parcel_nii.m
   ``` Generating the dlabel.nii file for each subject based on the results from prior single parcellation.```  
   ## step2.10 S4_2_separate_dtseries.m
