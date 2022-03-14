@@ -65,4 +65,14 @@ This script is used to calculate the mean intra-subject variability matrix for H
 ## step4.4 corr_data.Rmd
 ``` Plot figure2 ```   
 # step 5,  Correlate the Structral connectivity map with the inter-subject variability matrix of FC. 
-we use Qsiprep to build structral connectivity map for each subject, and the [**mrtrix_multishell_msmt_ACT-hsvs**](https://qsiprep.readthedocs.io/en/latest/reconstruction.html#mrtrix-multishell-msmt-act-hsvs) method were used. The grey matter was segemented into 400 regions based on our single parcellation results
+we use Qsiprep to build structral connectivity map for each subject, and the [**mrtrix_multishell_msmt_ACT-hsvs**](https://qsiprep.readthedocs.io/en/latest/reconstruction.html#mrtrix-multishell-msmt-act-hsvs) method were used. Whole cortex was segemented into 400 regions based on our single parcellation results. The Structral connectivity process steps were discribed in [**here**](https://github.com/zaixulab-CIBR/dMRI_processing).
+## step5.1 step_1_HCPA_SC_FC_couping.m  
+``` Correlate the Structral connectivity map which weighted by streamline counts with the inter-subject variability matrix of HCPA data. Finally, 233 subjects were included on constraction of the mean structral connectivity map on HCPA dataset, 12 subjects were exculded beacause of losting dMRI data or transformation error.```
+## step5.2 step_1_HCPD_SC_FC_couping.m  
+``` Correlate the Structral connectivity map which weighted by streamline counts with the inter-subject variability matrix of HCPD data. Finally, 410 subjects were included on constraction of the mean structral connectivity map on HCPA dataset, 5 subjects were exculded beacause of losting dMRI data or transformation error.```
+## step5.3 sc_fc_corr.Rmd  
+``` Plot figure3 ```   
+# step 6, Variability estimation for Age Effects  
+We estimated the age effects on FC variability through HCPD dataset. Age groups include 8-10 year olds (n=57), 14-16 year olds (n=), and 19-21 year olds (n=) were chosen to estimate the age effects on FC variability.
+
+
