@@ -28,6 +28,15 @@ You can run the [step1 Motion Control](https://github.com/zaixulab-CIBR/Singlepa
   ```We use the pre-trained group priors of [**Kong2022_ArealMSHBM**](https://github.com/ThomasYeoLab/CBIG/tree/master/stable_projects/brain_parcellation/). So we just copy the group_priors/HCP_fs_LR_32k_40sub/400/gMSHBM/beta50/Params_Final.mat to the right directory.```  
   ## step2.7 S3_4_individual_pacelation.m  
   ``` Running individual parcellation for each subject by using gMS-HBM method.```
-  
-   
-
+  ## step2.8 S3_5_topgraph_variability  
+  ``` Calculating the topgraph variability as same as [Zaixu Cui, et al(2020)](https://www.sciencedirect.com/science/article/pii/S0896627320300556)```
+  ## step2.9 S4_1_generat_ind_parcel_nii.m
+  ``` Generating the dlabel.nii file for each subject based on the results from prior single parcellation.```  
+  ## step2.10 S4_2_separate_dtseries.m
+  ``` This script is used to convert the cifti file into gifti file for convenient use in next step.```
+  ## step2.11 S4_3_corr_based_singlepar_runs.m
+  ``` This script is used to calculate the mean timeseries on each parcel for each subject based on single parcellation.```  
+  ## step2.12 S5_1_convert_dlabel_nii.m  
+  ``` This script is used to convert dlabel file in fsLR32k space into MNI space nii file.``` 
+  ## step2.13 S5_2_chekc_label_nii.m 
+  ``` We need to check the accuracy of convert step.``` 
