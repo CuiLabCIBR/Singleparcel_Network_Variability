@@ -12,7 +12,7 @@ You can run the [step1 Motion Control](https://github.com/zaixulab-CIBR/Singlepa
  Considering the variability between subjects on functional connectivity was mixed from topography and strength of edge, we use a new method that developed from [Kong, R ., et al(2021)](https://doi.org/10.1093/CERCOR/BHAB101), which can allow estimation of individual-specific cortical parcellations based on resting fMRI connectivity. We used a pre-computed group priors of gMSHBM initializated by 400 parcel Schaefer group-level parcellation to guide the individual parcelation, so each particpant got 400 parcel regions for further analysis.  
    
    
- You should run scripts in each folder for different dataset, each folder contains same steps to calculate the individual parcels in fsLR 32k space and transformation nii file in MNI space for whiter matter tractography.  Before you run those scripts below, you should set up computer envoriment for **CBIG**[**Kong2022_ArealMSHBM**](https://github.com/ThomasYeoLab/CBIG/tree/master/stable_projects/brain_parcellation/)
+ You should run scripts in each folder for different dataset, each folder contains same steps to calculate the individual parcels in fsLR 32k space and transformation nii file in MNI space for whiter matter tractography.  Before you run those scripts below, you should set up computer envoriment for **CBIG** follows by [**Kong2022_ArealMSHBM**](https://github.com/ThomasYeoLab/CBIG/tree/master/stable_projects/brain_parcellation/)
    
-   ## step2.1 
+   ## step2.1 S0_ConfigPaths_server.m, setup all default setting，ex: working directory, cifti package directory, gifti package directory and data directory.```you need to noticed that before run this script, you need to Check if your configuration for CBIG works.```
 
