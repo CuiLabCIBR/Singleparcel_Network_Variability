@@ -25,6 +25,9 @@ You can run the [step1 Motion Control](https://github.com/zaixulab-CIBR/Singlepa
   ## step2.5 S3_2_generate_profiles.m  
   ```To generate the functional connectivity profiles for each subject based on each resting fMRI session.``` 
   ## step2.6 S3_3_generate_mask.m
-  ```We use the pre-trained group priors of [**Kong2022_ArealMSHBM**](https://github.com/ThomasYeoLab/CBIG/tree/master/stable_projects/brain_parcellation/). So we just copy the group_priors/HCP_fs_LR_32k_40sub/400/gMSHBM/beta50/Params_Final.mat to the right directory.```
+  ```We use the pre-trained group priors of [**Kong2022_ArealMSHBM**](https://github.com/ThomasYeoLab/CBIG/tree/master/stable_projects/brain_parcellation/). So we just copy the group_priors/HCP_fs_LR_32k_40sub/400/gMSHBM/beta50/Params_Final.mat to the right directory.```  
+  ## step2.7 S3_4_individual_pacelation.m  
+  ``` Running individual parcellation for each subject by using gMS-HBM method.```
+  
    
 
