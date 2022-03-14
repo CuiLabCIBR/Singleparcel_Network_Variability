@@ -41,4 +41,11 @@ You can run the [step1 Motion Control](https://github.com/zaixulab-CIBR/Singlepa
   ## step2.13 S5_2_chekc_label_nii.m 
   ``` We need to check the accuracy of convert step.```   
 # Step 3, Variability estimatemation for all datasets.
-In this step, we estimate the intra-subject variability for all three datasets and inter-subject variability, inter-subject variability which regress mean intra-subject variability out for HCPA and HCPD datasets(there only are 25 subjects on HNU dataset). This approach was followed by [Stoecklein, S., et al(2020)](https://www.pnas.org/doi/pdf/10.1073/pnas.1907892117)
+```In this step, we estimate the intra-subject variability for all three datasets, and then we estimated inter-subject variability, inter-subject variability which regress mean intra-subject variability out for HCPA and HCPD datasets(there only are 25 subjects on HNU dataset).``` This approach followd the way of [Stoecklein, S., et al(2020)](ttps://www.pnas.org/doi/pdf/10.1073/pnas.1907892117).  
+  ## step3.1 step0_calculate_group_label.m  
+  ```We used the scheafer 400 group label as the group reference label.```  
+  ## step3.2.1 step_1_inra_variability_12run.m
+  ```This script is used to calculate the mean intra-subject variability matrix for HCP adults data. We split each session (4) of HCPA resting into three segments to estimate the intra-subject variability for each subject by calculating the standard deviation between 12 segments.```
+  ## step3.2.2 step_1_inra_variability_8run_all_sub.m
+  ```This script is used to calculate the mean intra-subject variability matrix for HCP development data. The task activation model was regressed from three task identification fMRI data [Fair et al., (2007b)](https://www.sciencedirect.com/science/article/pii/S1053811906011773) for “pseudo-resting state” timeseries calculation. The details that how to merge 5 task-regressed-out runs into 4 segments are described in this script.```
+
