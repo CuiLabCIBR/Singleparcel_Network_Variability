@@ -39,4 +39,6 @@ You can run the [step1 Motion Control](https://github.com/zaixulab-CIBR/Singlepa
   ## step2.12 S5_1_convert_dlabel_nii.m  
   ``` This script is used to convert dlabel file in fsLR32k space into MNI space nii file.``` 
   ## step2.13 S5_2_chekc_label_nii.m 
-  ``` We need to check the accuracy of convert step.``` 
+  ``` We need to check the accuracy of convert step.```   
+# Step 3, Variability estimatemation for all datasets.
+In this step, we estimate the intra-subject variability for all three datasets and inter-subject variability, inter-subject variability which regress mean intra-subject variability out for HCPA and HCPD datasets(there only are 25 subjects on HNU dataset). This approach was followed by [Stoecklein, S., et al(2020)](https://www.pnas.org/doi/pdf/10.1073/pnas.1907892117)
