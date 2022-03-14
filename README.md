@@ -51,7 +51,11 @@ This script is used to calculate the mean intra-subject variability matrix for H
  ## step3.3 step_2_inter_variability_4run.m  
  ``` This script is used to calculate the mean inter-subject variability matrix across 4 resting runs.```
  ## step3.4 step_3_inter_regress_intra.m
- ``` This script is used to calculate the mean inter-subject variability matrix which regress mean intra-subject variability.```  
+ ``` This script is used to calculate the mean inter-subject variability matrix which regress mean intra-subject variability (for sample reference, the inter-subject variability matrix mentioned on below all refered to this matrix).```  
  ## step3.5 step3_plot_figure_for_each_dataset
- ``` Running those script to plot figure 1.```
+ ``` Running those scripts to plot figure 1.```  
+   
+ # step 4,  Correlate the Gene map with the inter-subject variability matrix.  
+ ## step4.1 Step_1_create_scheafer_400to_yeo_gene.m
+ ``` We use the Gene map which calculated by [Krienen, F. M., Yeo, B. T. T., Ge, T., Buckner, R. L., & Sherwood, C. C. (2016)](https://www.pnas.org/doi/10.1073/pnas.1510903113)]```
 
