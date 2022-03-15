@@ -87,6 +87,7 @@ sub_info <- all_data %>% filter(sex != 'Sex of the subject')%>%
 
 motion_valid %>% export('task_and_rest_motion_valid_sub.csv')
 names(sub_info)[1] <- "subject"
+# different age group
 age_group1 <- motion_valid %>% inner_join(sub_info,"subject") %>% filter(years<11)
 age_group2 <- motion_valid %>% inner_join(sub_info,"subject") %>% filter(years>13 & years<17)
 age_group3 <- motion_valid %>% inner_join(sub_info,"subject") %>% filter(years>18)
