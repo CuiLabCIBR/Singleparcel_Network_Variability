@@ -45,13 +45,13 @@ You can run the [step1 Motion Control](https://github.com/zaixulab-CIBR/Singlepa
   ## step3.1 step0_calculate_group_label.m  
   ```We used the scheafer 400 group label as the group reference label.```  
   ## step3.2.1 step_1_inra_variability_12run.m
-  ```This script is used to calculate the mean intra-subject variability matrix for HCP adults data. We split each session (4 session for each subject) of HCPA resting into three segments to estimate the intra-subject variability for each subject by calculating the standard deviation between 12 segments.```
+  ```This script is used to calculate the mean intra-subject variability matrix for HCP adults data. We split each session (4 session for each subject) of HCPA resting into three segments to estimate the intra-subject variability for each subject by calculating the standard deviation between 12 segments.And then, the mean intra-subject variability matrix was calculated by average all subject.```
   ## step3.2.2 step_1_inra_variability_8run_all_sub.m
 This script is used to calculate the mean intra-subject variability matrix for HCP development data. The task activation model was regressed from three task identification fMRI data [**Fair et al.,(2007b)**](https://www.sciencedirect.com/science/article/pii/S1053811906011773) for “pseudo-resting state” timeseries calculation. The details that how to merge 5 task-regressed-out runs into 4 segments are described in [**here**](https://github.com/zaixulab-CIBR/Singleparcel_Network_Variability/blob/main/step_2_Single_parcelation/S2_kong_2022_HCPD/S4_3_corr_based_singlepar_runs.m).
  ## step3.3 step_2_inter_variability_4run.m  
- ``` This script is used to calculate the mean inter-subject variability matrix across 4 resting runs.```
+ ``` This script is used to calculate the mean inter-subject variability matrix across 4 resting runs.We first calculated standard deviation for each session across all subject, and then got the mean inter-subject variability matrix from averaging all standard deviation matrix across 4 sessions.```
  ## step3.4 step_3_inter_regress_intra.m
- ``` This script is used to calculate the mean inter-subject variability matrix which regress mean intra-subject variability (for sample reference, the inter-subject variability matrix mentioned on below all refered to this matrix).```  
+ ``` This script is used to calculate the mean inter-subject variability matrix which regress mean intra-subject variability (for sample reference, the inter-subject variability matrix mentioned on below all refered to this matrix). Specificlly, a liner model was built to estimate the contribution from mean intra-subject variability to inter-subject variability for each session, and then, we averaged  residuals of liner model from 4 sessions for the final inter-subject variability matrix calculation.```  
  ## step3.5 step3_plot_figure_for_each_dataset
  ``` Running those scripts to plot figure 1.```  
    
@@ -73,6 +73,17 @@ we use Qsiprep to build structral connectivity map for each subject, and the [**
 ## step5.3 sc_fc_corr.Rmd  
 ``` Plot figure3 ```   
 # step 6, Variability estimation for Age Effects  
-We estimated the age effects on FC variability through HCPD dataset. Age groups include 8-10 year olds (n=57), 14-16 year olds (n=), and 19-21 year olds (n=) were chosen to estimate the age effects on FC variability.
-
+We estimated the age effects on FC variability through HCPD dataset. Age groups include 8-10 year olds (n=57), 14-16 year olds (n=165), and 19-21 year olds (n=128) were chosen to estimate the age effects on FC variability.  
+ ## step6.1 step_1_inra_variability_8run.m
+ ``` This script is used to calculate the mean intra-subject variability matrix for each age group from HCPD data.```
+  ## step6.2 step_2_inter_variability_4run.m
+ ``` This script is used to calculate the mean inter-subject variability matrix for each age group from HCPD data.```
+  ## step6.3 step_3_inter_regress_intra.m
+ ``` This script is used to calculate the mean intra-subject variability matrix which regress intra-subject variability out for each age group from HCPD data.```
+  ## step6.4 step4_age_effects.m
+  ``` This script is used to calculate the within-network and between-network variability on each network based on yeo-7network parcellation scheme.```
+  ## step6.5  plot_variability_for_dmn.Rmd
+  ``` This script is used to plot the variability for connections between each network and DMN.```
+  ## step6.6  plot_variability_for_within_and_between_network.R
+  ``` This script is used to plot the within-network and between-network variability for each network.```
 
