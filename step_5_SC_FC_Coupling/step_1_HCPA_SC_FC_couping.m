@@ -32,9 +32,6 @@ withDirectConn = find(calcUse{1}~=0);
 
 useADJ_1 = calcUse{1}(withDirectConn)';
 useADJ_2 = calcUse{2}(withDirectConn)';
-
-useADJ_1(mask)=[];
-useADJ_2(mask)=[];
 corrMethod = 'spearman';
 [r,p] = corr(useADJ_1,useADJ_2,'type',corrMethod)
 
